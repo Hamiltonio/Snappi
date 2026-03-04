@@ -1,0 +1,34 @@
+# Environment and secrets
+.env
+venv/
+*.pyc
+__pycache__/
+
+# Snappi runtime data (regenerate locally)
+forebet_cache.json
+snappi.log
+*.log
+bet_history.json
+rejections.csv
+archives/
+api_calls_state.json
+day_start_balance.json
+balance.json
+memory.json
+total_profit.json
+pending_snaps.json
+snap_counter.json
+today_fixtures_cache.json
+optimization_log.txt
+chat_session.json
+snap_recipients.json
+
+# Google service account (keep a backup elsewhere; don't commit keys)
+service_account.json
+*-credentials.json
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

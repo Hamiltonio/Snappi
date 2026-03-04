@@ -1,0 +1,26 @@
+# Snappi systemd service — auto-start on boot, always restart when main.py exits (crash or stop).
+# Install: sudo cp snappi.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable snappi && sudo systemctl start snappi
+# Then: sudo systemctl status snappi   (logs: journalctl -u snappi -f)
+# To update code: sudo systemctl stop snappi  →  edit  →  sudo systemctl start snappi
+
+[Unit]
+Description=Snappi V3 Betting Assistant
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hamilton
+WorkingDirectory=/home/hamilton/Snappi
+# Use venv Python if you have one; else use system python3.
+ExecStart=/home/hamilton/Snappi/venv/bin/python -u main.py
+# If no venv, use: ExecStart=/usr/bin/python3 -u main.py
+Restart=always
+RestartSec=15
+StandardOutput=journal
+StandardError=journal
+# Optional: cap RAM so the Pi doesn't run out (uncomment and adjust if needed)
+# MemoryMax=400M
+
+[Install]
+WantedBy=multi-user.target

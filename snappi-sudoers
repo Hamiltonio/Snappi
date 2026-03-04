@@ -1,0 +1,5 @@
+# Passwordless sudo for Snappi (and PicoClaw via Snappi). Install with:
+#   sudo cp snappi-sudoers /etc/sudoers.d/snappi-sudoers
+#   sudo chmod 440 /etc/sudoers.d/snappi-sudoers
+# Ensures shell_exec and picoclaw can run sudo (e.g. systemctl restart snappi) without a password.
+hamilton ALL=(ALL) NOPASSWD: ALL

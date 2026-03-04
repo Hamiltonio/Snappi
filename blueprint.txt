@@ -1,0 +1,9 @@
+Snappi Bot Specification (v2.0)
+
+Goal: Find high-probability "Under" opportunities in both halves.
+
+Time Window 1 (First Half): Scan at the 30th minute. Logic: If score is 0-0 or 1-0 and activity is low, bet "Under 1.5/2.5 Second Half Goals" or "Under 0.5 First Half Goals."
+
+Time Window 2 (Second Half): Scan at the 70th minute. Logic: If low activity, bet "Under 2 more goals."
+
+Strategy: Collect 3 picks from the current window to build a ~2.00 odds parlay.
